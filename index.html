@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <script src="./script.js"></script>
+   <title>Document</title>
+   <style>
+    
+   </style>
+ </head>
+ <body>
+ <div id="calculator">
+   <input type="text" id="inp-btn" placeholder="Type Here">
+   <br>
+   <button onclick="calculate(1)" >1</button>
+   <button onclick="calculate(2)" >2</button>
+   <button onclick="calculate(3)" >3</button>
+   <button id="clear-btn" >c</button>
+   <br>
+   <button onclick="calculate(4)" >4</button>
+   <button onclick="calculate(5)" >5</button>
+   <button onclick="calculate(6)" >6</button>
+   <button id="equal-btn">=</button>    
+   <br>   
+   <button onclick="calculate(7)" >7</button>
+   <button onclick="calculate(8)" >8</button>
+   <button onclick="calculate(9)" >9</button>
+   <button onclick="calculate('+')" >+</button>
+   <br>
+   <button onclick="calculate(0)" >0</button>
+   <button onclick="calculate('-')" >-</button>
+   <button onclick="calculate('/')" >/</button>
+   <button onclick="calculate('*')" >*</button>
+ </div>
+ <!-- SCRIPT -->
+ <script>
+function calculate(num){
+  const inpBtn = document.getElementById('inp-btn').value;
+  const inpTotal = inpBtn+num;
+  const inpValue = document.getElementById('inp-btn').value= inpTotal;
+  return inpValue;
+}
+const eqBtn = document.getElementById('equal-btn');
+eqBtn.addEventListener('click',function(){
+ eqNum = document.getElementById('inp-btn').value;
+ total = eval(eqNum);
+ document.getElementById('inp-btn').value= total; 
+});
+const clBtn = document.getElementById('clear-btn');
+clBtn.addEventListener('click',function(){ 
+ document.getElementById('inp-btn').value= ''; 
+});
+ </script>
+
+ </body>
+ </html>
